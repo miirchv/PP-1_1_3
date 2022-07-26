@@ -13,12 +13,12 @@ public class UserServiceImpl implements UserService {
         userDaoJDBC.createUsersTable();
     }
 
-    public void dropUsersTable() {
+    public void dropUsersTable() throws SQLException {
         UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
         userDaoJDBC.dropUsersTable();
     }
 
-    public void saveUser(String name, String lastName, byte age) {
+    public void saveUser(String name, String lastName, byte age) throws SQLException {
         UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
         userDaoJDBC.saveUser(name,lastName, age);
     }
@@ -28,12 +28,12 @@ public class UserServiceImpl implements UserService {
         userDaoJDBC.removeUserById(id);
     }
 
-    public List<User> getAllUsers() {
+    public List<User> getAllUsers() throws SQLException {
         UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
         return userDaoJDBC.getAllUsers();
     }
 
-    public void cleanUsersTable() {
+    public void cleanUsersTable() throws SQLException {
         UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
         userDaoJDBC.cleanUsersTable();
     }
